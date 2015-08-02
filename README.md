@@ -37,8 +37,9 @@ produces output like
 ```
 
 It is also possible to format length of individual parts of the pattern. 
-Maximum and minimum length can be specified for part 
-Following patterna
+Maximum and minimum length can be specified. 
+
+Following pattern
 ```
 ${date} ${time} ${level:3:3}: ${message}
 ```
@@ -62,47 +63,47 @@ all other loggers.
 
 Following code define such configuration
 ```
-        SLConf.reset(); // reset previous conf
+ SLConf.reset(); // reset previous conf
         
-								SLConf.rootLogger() // for root logger
-												.console() // create console handler
-												.filterWarn() // with filter for warn level
-												.pattern() // start pattern
-            .time()
-            .text(" ").level(3, -3)
-            .text(" ").simpleName(20, -20)
-            .text(" ").message()
-            .patternEnd() // end pattern
-												.handler(); // apply handler to logger
+ SLConf.rootLogger() // for root logger
+       .console() // create console handler
+       .filterWarn() // with filter for warn level
+       .pattern() // start pattern
+       .time()
+       .text(" ").level(3, -3)
+       .text(" ").simpleName(20, -20)
+       .text(" ").message()
+       .patternEnd() // end pattern
+       .handler(); // apply handler to logger
         
-								SLConf.rootLogger() // for root logger
-												.file("target/test.log") // create file handler
-												.filterAll() // with all level filter
-												.pattern() // start pattern
-            .date()
-            .text(" ").time()
-            .text(" ").level(3, -3)
-            .text(" ").simpleName(20, -20)
-            .text(" ").message()
-            .patternEnd() // end pattern
-												.handler(); // apply handler to logger
+ SLConf.rootLogger() // for root logger
+       .file("target/test.log") // create file handler
+       .filterAll() // with all level filter
+       .pattern() // start pattern
+       .date()
+       .text(" ").time()
+       .text(" ").level(3, -3)
+       .text(" ").simpleName(20, -20)
+       .text(" ").message()
+       .patternEnd() // end pattern
+       .handler(); // apply handler to logger
         
-								SLConf.rootLogger().info(); // set all loggers to info level
-        SLConf.logger("sk.antons").all(); // set my logers to all levels
+ SLConf.rootLogger().info(); // set all loggers to info level
+ SLConf.logger("sk.antons").all(); // set my logers to all levels
 ```
 
 ## Usage shortcuts
 
 As I usually needs such logging configuration I created two shortcuts 
 ```
-	SLConf.simpleConsole("sk.antons"); // set all loggers to info level 
-	                                   // and sk.antons loggers to all levels
-																																				// only console output
+ SLConf.simpleConsole("sk.antons"); // set all loggers to info level 
+                                    // and sk.antons loggers to all levels
+                                    // only console output
 
-	SLConf.fileConsole("sk.antons", "target/test.log"); 
-																																			// set all loggers to info level 
-	                                  // and sk.antons loggers to all levels
-																																			// info to console and all other to file.
+ SLConf.fileConsole("sk.antons", "target/test.log"); 
+                                    // set all loggers to info level 
+                                    // and sk.antons loggers to all levels
+                                    // info to console and all other to file.
 
 ```
 
