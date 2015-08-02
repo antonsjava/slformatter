@@ -51,7 +51,7 @@ produces output like
 2015.07.31 22:53:57.078 INF: copy MzvZuZobrPortlety.war 377.3 kB/s 79% 
 2015.07.31 22:53:58.026 INF: copy MzvZuZobrPortlety.war 297.0 kB/s 83% 
 ```
-Level is cutted to maximum and minimum 3 chars so all messages starts at 
+Level is cut to maximum and minimum 3 chars so all messages starts at 
 same position.
 
 ## Usage
@@ -100,7 +100,7 @@ As I usually needs such logging configuration I created two shortcuts
                                     // and sk.antons loggers to all levels
                                     // only console output
 
- SLConf.fileConsole("sk.antons", "target/test.log"); 
+ SLConf.simpleFile("sk.antons", "target/test.log"); 
                                     // set all loggers to info level 
                                     // and sk.antons loggers to all levels
                                     // info to console and all other to file.
