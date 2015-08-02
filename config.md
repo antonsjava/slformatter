@@ -67,15 +67,15 @@ It is also possible to configure logging using helper class SLConf.
  - SLConf.reset() resets whole configuration
  - SLConf.rootLogger() - provides root logger for configuration
  - SLConf.logger(loggername) - provides specified logger for configuration
- - loggerSetup.info() , ,warn() fine(), ... sets level for logger
- - loggerSetup.console() , define console handler for logger
- - loggerSetup.file() , define file handler for logger
- - HandlerSetup.handler() , close handler configuration - mandatory
- - HandlerSetup.filterXXX() , sets XXX level for handler filtering
- - HandlerSetup.filterXXX() , sets XXX level for handler filtering
- - HandlerSetup.pattern() , starts pattern definition for formatter
- - HandlerFormatSetup.patternEnd() , stops pattern definition - mandatory
- - HandlerFormatSetup.text(), date(), ... define patter parts
+ - loggerSetup.info() ,warn() fine(), ... - sets level for logger
+ - loggerSetup.console() - define console handler for logger
+ - loggerSetup.file() - define file handler for logger
+ - HandlerSetup.handler() - close handler configuration - mandatory
+ - HandlerSetup.filterXXX() - sets XXX level for handler filtering
+ - HandlerSetup.filterXXX() - sets XXX level for handler filtering
+ - HandlerSetup.pattern() - starts pattern definition for formatter
+ - HandlerFormatSetup.patternEnd() - stops pattern definition - mandatory
+ - HandlerFormatSetup.text(), date(), ... - define patter parts
 
 ```
 
