@@ -107,13 +107,13 @@ As I usually needs such logging configuration I created two shortcuts
 
 ```
 
-## Macen usage
+## Maven usage
 
 ```
-			<dependency>
-							<groupId>com.github.antonsjava</groupId>
-							<artifactId>slformatter</artifactId>
-							<version>1.0</version>
-			</dependency>
+   <dependency>
+      <groupId>com.github.antonsjava</groupId>
+      <artifactId>slformatter</artifactId>
+      <version>1.0</version>
+   </dependency>
 ```
 
