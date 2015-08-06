@@ -41,7 +41,7 @@ Maximum and minimum length can be specified.
 
 Following pattern
 ```
-${date} ${time} ${level:3:3}: ${message}
+${date} ${time} ${level:3:-3}: ${message}
 ```
 produces output like 
 ```
@@ -71,7 +71,7 @@ Following code define such configuration
        .pattern() // start pattern
        .time()
        .text(" ").level(3, -3)
-       .text(" ").simpleName(20, -20)
+       .text(" ").simpleName(-20, -20)
        .text(" ").message()
        .patternEnd() // end pattern
        .handler(); // apply handler to logger
@@ -83,7 +83,7 @@ Following code define such configuration
        .date()
        .text(" ").time()
        .text(" ").level(3, -3)
-       .text(" ").simpleName(20, -20)
+       .text(" ").simpleName(-20, -20)
        .text(" ").message()
        .patternEnd() // end pattern
        .handler(); // apply handler to logger

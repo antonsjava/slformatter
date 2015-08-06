@@ -61,7 +61,7 @@ public class SLConf {
         SLConf.rootLogger().console().filterAll().pattern()
             .time()
             .text(" ").level(3, -3)
-            .text(" ").simpleName(20, -20)
+            .text(" ").simpleName(-20, -20)
             .text(" ").message()
             .patternEnd().handler();
         SLConf.rootLogger().info();
@@ -82,7 +82,7 @@ public class SLConf {
         SLConf.rootLogger().console().filterWarn().pattern()
             .time()
             .text(" ").level(3, -3)
-            .text(" ").simpleName(20, -20)
+            .text(" ").simpleName(-20, -20)
             .text(" ").message()
             .patternEnd().handler();
         SLConf.rootLogger().file(fileName).filterAll().pattern()
