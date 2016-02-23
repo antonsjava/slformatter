@@ -20,6 +20,7 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import sk.antons.util.logging.ConsoleOutHandler;
 
 /**
  * Logger setup helper class. Use SLConmf.logger() to obtain instance of this 
@@ -135,6 +136,16 @@ public class LoggerSetup {
      * @return handler configuration helper
      */
     public HandlerSetup console() {
+        return new HandlerSetup(this, new ConsoleOutHandler());
+    }
+    
+    /**
+     * Creates console handler for this logger. Uses System.err for logging. 
+     * There is necessary to call HandlerSetup.handler() after whole handler 
+     * configuration.
+     * @return handler configuration helper
+     */
+    public HandlerSetup consoleErr() {
         return new HandlerSetup(this, new ConsoleHandler());
     }
 

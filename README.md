@@ -66,7 +66,7 @@ Following code define such configuration
  SLConf.reset(); // reset previous conf
         
  SLConf.rootLogger() // for root logger
-       .console() // create console handler
+       .console() // create console handler for System.out
        .filterWarn() // with filter for warn level
        .pattern() // start pattern
        .time()
