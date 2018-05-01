@@ -16,6 +16,7 @@
 
 package sk.antons.util.logging.conf;
 
+import java.io.File;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -157,6 +158,11 @@ public class LoggerSetup {
      */
     public HandlerSetup file(String name) {
         try {
+            File file = new File(name);
+            if(!file.exists()) {
+                File folder = file.getParentFile();
+                if(!folder.exists()) folder.mkdirs();
+            }
             return new HandlerSetup(this, new FileHandler(name));
         } catch (Exception e) {
             System.out.println(" Unable to open file  " + name + " because of "  + e);

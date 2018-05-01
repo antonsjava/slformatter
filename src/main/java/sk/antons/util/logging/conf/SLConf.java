@@ -96,6 +96,33 @@ public class SLConf {
         SLConf.logger(fullLogger).all();
     }
 
+    /**
+     * Helper method for configuring logging to file and console. 
+     * All levels are enabled for specified logger and all other
+     * loggers are filtered to INFO level.
+     * Everything enabled is logged to specified file and info is 
+     * logged to console too.
+     * @param fullLogger - name of the logger where all levels are enabled
+     * @param fileName - name of the file.
+     */
+    public static void simpleConsoleAndFile(String fullLogger, String fileName) {
+        SLConf.reset();
+        SLConf.rootLogger().console().filterInfo().pattern()
+            .time()
+            .text(" ").level(3, -3)
+            .text(" ").simpleName(-20, -20)
+            .text(" ").message()
+            .patternEnd().handler();
+        SLConf.rootLogger().file(fileName).filterAll().pattern()
+            .date()
+            .text(" ").time()
+            .text(" ").level(3, -3)
+            .text(" ").simpleName(20, -20)
+            .text(" ").message()
+            .patternEnd().handler();
+        SLConf.rootLogger().info();
+        SLConf.logger(fullLogger).all();
+    }
     
     
     
