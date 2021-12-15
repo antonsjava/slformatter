@@ -111,9 +111,9 @@ As I usually needs such logging configuration I created two shortcuts
 
 ```
    <dependency>
-      <groupId>com.github.antonsjava</groupId>
+      <groupId>io.github.antonsjava</groupId>
       <artifactId>slformatter</artifactId>
-      <version>1.0</version>
+      <version>LASTVERSION</version>
    </dependency>
 ```
 
