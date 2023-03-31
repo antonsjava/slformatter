@@ -19,7 +19,7 @@ package sk.antons.util.logging.appender;
 import java.util.logging.LogRecord;
 
 /**
- * Abstract parent for any placeholder implementation. 
+ * Abstract parent for any placeholder implementation.
  *
  * @author antons
  */
@@ -30,13 +30,13 @@ public abstract class AbstractAppender {
     protected int maxLength = 0;
     protected boolean maxLeft = true;
     protected String param = null;
-    
+
 
     public AbstractAppender() {
     }
-    
+
     /**
-     * Helper method. It is called after whole configuration 
+     * Helper method. It is called after whole configuration
      * and before usage;
      */
     public void consolidate() {
@@ -62,15 +62,15 @@ public abstract class AbstractAppender {
 
     /**
      * Appends this placeholder to provided StringBuilder.
-     * 
+     *
      * @param sb - builder where polaceholder string is to be appended.
-     * @param record - input data for generation of replacement string. 
+     * @param record - input data for generation of replacement string.
      */
     public void append(StringBuilder sb, LogRecord record) {
         String text = format(record);
         append(sb, text);
     }
-            
+
     protected void append(StringBuilder sb, String text) {
         if(text == null) text = "null";
         if(maxLength > 0) {
@@ -79,8 +79,8 @@ public abstract class AbstractAppender {
                 else text = text.substring(text.length() - maxLength);
             }
         }
-        
-        if(minLength <= 0) {
+
+        if(minLength == 0) {
             sb.append(text);
         } else {
             if(text.length() < minLength) {
